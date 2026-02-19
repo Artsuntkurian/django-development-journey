@@ -28,3 +28,7 @@ pip*
 python*
 activate*
 deactivate*
+
+# Django collectstatic
+static/admin/
+staticfiles/
