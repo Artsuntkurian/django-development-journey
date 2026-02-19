@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Emp To Dept To Mgr Table</h1>
+
+        <table border="2px">
+            <tr>
+                <th>Emp Name</th>
+                <th>Emp No</th>
+                <th>Emp Job</th>
+                <th>Emp sal</th>
+
+                <th>Dept Name</th>
+                <th>Dept No</th>
+                <th>Dept Location</th>
+
+                <th>MGR Name</th>
+                <th>MGR No</th>
+                <th>MGR Job</th>
+                <th>MGR sal</th>
+            </tr>
+            {% for row in OSLEDMO %}
+
+            <tr>
+                
+                <td>{{ row.ename }}</td>
+                <td>{{ row.emp_no }}</td>
+                <td>{{ row.job }}</td>
+                <td>{{ row.sal }}</td>
+
+                <td>{{ row.dept_no.dname }}</td>
+                <td>{{ row.dept_no.dept_no }}</td>
+                <td>{{ row.dept_no.loc }}</td>
+
+                
+                <td>{{ row.mgr.ename }}</td>
+                <td>{{ row.mgr.emp_no }}</td>
+                <td>{{ row.mgr.job }}</td>
+                <td>{{ row.mgr.sal }}</td>
+                
+
+            </tr>
+
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

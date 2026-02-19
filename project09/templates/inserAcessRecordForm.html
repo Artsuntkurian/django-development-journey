@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>AcessRecord TABLE INSERTION Form</h1>
+        <form  method="post">
+
+            {% csrf_token %}
+
+            
+            <label for="n"> Name : </label>
+            
+                {% for WO in QLWO %}
+
+                    <input type="radio" name="id" value="{{ WO.id }}">{{ WO.name }}
+                    
+                {% endfor %}
+            
+            <br><br>
+            <label for="a"> Author : </label>
+            <input type="text" name="author" id="a">
+            <br><br>
+            <label for="d">Date : </label>
+            <input type="date" name="date" id="d">
+            <br><br>
+            <input type="submit">
+
+
+        </form>
+    </center>
+</body>
+</html>

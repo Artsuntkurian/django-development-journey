@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <h1>Dept To Emp Prefetch Data</h1>
+        {% for DEO in QSLDEO %}
+            {% if DEO.emp_set.all %}
+            <h4>{{ DEO.dname }}</h4>
+            
+
+                <table border="2px">
+                    <tr>
+                        <th>EMP NAME</th>
+                        <th>EMP NO</th>
+                        <th>EMP SAL</th>
+                        <th>EMP JOB</th>
+                    </tr>
+                    {% for EO in DEO.emp_set.all %}
+
+                        <tr>
+                            <td>{{EO.ename}}</td>
+                            <td>{{EO.emp_no}}</td>
+                            <td>{{EO.sal}}</td>
+                            <td>{{EO.job}}</td>
+                        </tr>
+
+
+                    {% endfor %}
+                </table>
+            {% else %}  
+                <p>No employees in  {{ DEO.dname }} on this filter</p>
+            {% endif %}
+
+
+
+        {% endfor %}
+    </center>
+</body>
+</html>

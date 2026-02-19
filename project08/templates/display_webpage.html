@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Webpage Table</h1>
+        <table border="3px">
+            <tr>
+                <th>ID</th>
+                <th>Topic Name</th>
+                <th>Name</th>
+                <th>URL</th>
+            </tr>
+            {% for row in QLTO %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.topic_name.topic_name }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.url }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
