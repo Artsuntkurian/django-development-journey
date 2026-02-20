@@ -92,6 +92,6 @@ Open a Pull Request
 If you find this repository helpful, consider giving it a star — it helps increase visibility and motivation.
 
 
-=======
+     
 Maintained by Artsun T Kurian
 
