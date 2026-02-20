@@ -91,8 +91,7 @@ Open a Pull Request
 ### ⭐ Support
 If you find this repository helpful, consider giving it a star — it helps increase visibility and motivation.
 
-<<<<<<< HEAD
-Maintained by Artsun T Kurian
+
 =======
 Maintained by Artsun T Kurian
 
