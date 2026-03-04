@@ -95,4 +95,50 @@ def signin(request):
 def SignOut(request):
     logout(request)
     return HttpResponseRedirect(reverse('home'))
-    #return render(request,'home.html')
+
+
+@login_required
+def profile_display(request):
+
+    username=request.session.get('username')
+    UO=User.objects.get(username=username)
+    PO=Profile.objects.get(username=UO)
+    d={
+        'UO':UO,
+        'PO':PO
+    }
+
+    return render(request,'profile_display.html',d)
+    
+
+
+@login_required
+def change_password(request):
+
+    if request.method=='POST':
+        cp=request.POST['cp']
+        un=request.session.get('username')
+
+        UO=User.objects.get(username=un)
+        UO.set_password(cp)
+        UO.save()
+
+        return HttpResponseRedirect(reverse('home'))
+    return render(request,'change_password.html')
+
+
+def reset_password(request):
+
+    if request.method=='POST':
+        un=request.POST['username']
+        cp=request.POST['cp']
+        LUO=User.objects.filter(username=un)
+        if LUO:
+            UO=LUO[0]
+            UO.set_password(cp)
+            UO.save()
+            return HttpResponseRedirect(reverse('signin'))
+        else:
+            return HttpResponse('Invalid username')
+
+    return render(request,'reset_password.html')

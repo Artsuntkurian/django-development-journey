@@ -1,5 +1,5 @@
 """
-URL configuration for RegistrationForm project.
+URL configuration for project18 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -16,18 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from app.views import *
-from django.conf.urls.static import static
-from django.conf import settings
+
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Registration/',Registration,name='Registration'),
-    path('home/',home,name='home'),
-    path('signin/',signin,name='signin'),
-    path('SignOut/',SignOut,name='SignOut'),
-    path('profile_display/',profile_display,name='profile_display'),
-    path('change_password/',change_password,name='change_password'),
-    path('reset_password/',reset_password,name='reset_password'),
+    path('directTV/',TemplateView.as_view(template_name='directTV.html'),name='directTV'),
 
-]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    path('TVWData/',TVWData.as_view(),name='TVWData'),
+
+    path('InsertwithTV/',InsertwithTV.as_view(),name='InsertwithTV'),
+
+    path('InsertwithFV/',InsertwithFV.as_view(),name='InsertwithFV'),
+
+    path('display_topic/',display_topic.as_view(),name="display_topic"),
+
+]

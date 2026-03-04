@@ -7,14 +7,17 @@
 </head>
 <body>
     <center>
-        <h1>Registration Form </h1>
-        <form  method="POST" enctype="multipart/form-data">
+        <h1>
+            fbv_insert
+        </h1>
+        <form  method="POST">
             {% csrf_token %}
 
-            {{EUMFO.as_p}}
-            {{EPMFO.as_p}}
 
-            <input type="submit" value="Registration">
+            {{ESMFO.as_p}}
+
+            <input type="submit" value="fbv_insert">
+
         </form>
     </center>
 </body>

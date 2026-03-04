@@ -7,15 +7,24 @@
 </head>
 <body>
     <center>
-        <h1>Registration Form </h1>
-        <form  method="POST" enctype="multipart/form-data">
+        <h1>
+            This is Insert to TOpic Table with FV
+        </h1>
+
+        <form  method="POST">
+
             {% csrf_token %}
 
-            {{EUMFO.as_p}}
-            {{EPMFO.as_p}}
+            {{form.as_p}}
 
-            <input type="submit" value="Registration">
+
+            <input type="submit" value="Insert">
+
+
         </form>
+
+
+
     </center>
 </body>
 </html>

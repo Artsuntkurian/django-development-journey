@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+
+    <title>Profile page</title>
+
+    {% endblock %}
+
+{% block body_block%}
+
+    <center>
+        
+
+    <div class="card" style="width: 18rem;">
+  <img src="{{PO.profile_pic.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Profile details</h5>
+    <p class="card-text">Username : {{UO.username}} 
+        <br>
+        Email : {{UO.email}}
+        <br>
+        Address : {{PO.address}}
+        <br>
+    </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </center>
+
+    {% endblock %}

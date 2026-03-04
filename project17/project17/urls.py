@@ -1,5 +1,5 @@
 """
-URL configuration for RegistrationForm project.
+URL configuration for project17 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -17,17 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import *
-from django.conf.urls.static import static
-from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Registration/',Registration,name='Registration'),
-    path('home/',home,name='home'),
-    path('signin/',signin,name='signin'),
-    path('SignOut/',SignOut,name='SignOut'),
-    path('profile_display/',profile_display,name='profile_display'),
-    path('change_password/',change_password,name='change_password'),
-    path('reset_password/',reset_password,name='reset_password'),
 
-]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    path('fbv_string/',fbv_string,name='fbv_string'),
+    path('CBV_String/',CBV_String.as_view(),name='CBV_String'),
+
+    path('fbv_Html/',fbv_Html,name='fbv_Html'),
+    path('CBV_Html/',CBV_Html.as_view(),name='CBV_Html'),
+
+    path('fbv_insert/',fbv_insert,name='fbv_insert'),
+    path('CBV_Insert/',CBV_Insert.as_view(),name='CBV_Insert'),
+
+]
