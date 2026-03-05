@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>
+            Dispaly School Names With List View
+        </h1>
+
+        {% for S in schools %}
+
+        <a href="{{S.pk}}">
+            <h4>
+                {{S.school_name}}
+            </h4>
+        </a>
+
+        {% endfor %}
+    </center>
+</body>
+</html>
