@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'app/dummy.html' %}
+
+
+
+{% block title %}
+
+    <title>School Detail page</title>
+
+{% endblock%}
+
+
+
+{% block body_block %}
+
     <center>
         <h1>
             Details of {{schoolobject}}
@@ -29,6 +35,16 @@
             <hr>
 
         {% endfor %}
+
+        <h1>
+            <a href="{% url 'School_Update' pk=schoolobject.pk %}">Edit </a>
+        </h1>
+
+        <h1>
+            <a href="{% url 'School_Delete' pk=schoolobject.pk %}">Delete </a>
+        </h1>
     </center>
-</body>
-</html>
+
+{% endblock %}
+
+    

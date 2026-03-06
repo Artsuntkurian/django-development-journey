@@ -1,0 +1,42 @@
+{% extends 'app/dummy.html' %}
+
+
+
+{% block title %}
+
+    <title>School Form page</title>
+
+{% endblock%}
+
+
+
+{% block body_block %}
+
+    <center>
+
+        <h1>
+            Are you sure you want to delete {{schoolobj}}
+        </h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="submit" class="bg-danger text-white" value="Yes ,Delete">
+        </form>
+
+        <h1>
+            <a href="{% url 'School_List' %}">Go back to Schools</a>
+        </h1>
+
+        <h1>
+            <a href="{% url 'School_Update' pk=schoolobj.pk %}"> Go back to Edit</a>
+        </h1>
+
+        <h1>
+            <a href="{% url 'School_Detail' pk=schoolobj.pk %}">Go back to details</a>
+        </h1>
+    </center>
+
+{% endblock %}
+
+    
