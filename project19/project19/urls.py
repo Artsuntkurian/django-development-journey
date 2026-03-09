@@ -28,7 +28,9 @@ urlpatterns = [
 #    re_path('wish/(?P<name>.*)/',wish,name='wish'),
 
     re_path('update/(?P<pk>\d+)',School_Update.as_view(),name='School_Update'),
+
     re_path('delete/(?P<pk>\d+)',School_Delete.as_view(),name='School_Delete'),
+    
     re_path('(?P<pk>\d+)',School_Detail.as_view(),name='School_Detail'),
 
     
